@@ -5,25 +5,23 @@ body {
   margin-top: 24px;
   flex-flow: column wrap;
 }
-
 #calculator {
   padding: 12px 10px 6px;
-  border: solid 1px #005a56;
+  border: solid 1px #93B5C6;
   border-radius: 8px 8px 4px 4px;
-  background: linear-gradient(to bottom, #3E8E7E 0%,#05807b 68px,#7CD1B8 68px,#afd7d6 100%)
+  background: linear-gradient(to bottom,#93B5C6 0%,#C9CCD5 68px,#E4D8DC 68px,#FFE3E3 100%);
 }
-
 #output {
   width: 200px;
   height: 44px;
   font: bold 30px/44px monospace;
-  border: solid 1px #3E8E7E;
+  border: solid 1px #004643;
   border-radius: 2px;
   margin-bottom: 28px;
   text-align: right;
   padding: 0 0 0 2px;
   box-sizing: border-box;
-  background: #FABB51;
+  background: #FFE3E3;
   border-radius: 2px;
   white-space: nowrap;
   overflow: hidden;
@@ -49,15 +47,15 @@ button {
   border-radius: 4px;
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
   outline: 0;
-  background: #FAEDC6;
+  background: #93B5C6;
 }
 
 button:active {
-  background: #3E8E7E;
+  background: #C9CCD5;
 }
 
 .clear {
   grid-column: 1 / span 4;
   grid-row: 1 / span 1;
-  background: #FABB51;
+  background: #FFE3E3;
 }
