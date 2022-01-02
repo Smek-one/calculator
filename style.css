@@ -1,0 +1,63 @@
+body {
+  text-align: center;
+  display: flex;
+  align-content: center;
+  margin-top: 24px;
+  flex-flow: column wrap;
+}
+
+#calculator {
+  padding: 12px 10px 6px;
+  border: solid 1px #005a56;
+  border-radius: 8px 8px 4px 4px;
+  background: linear-gradient(to bottom, #3E8E7E 0%,#05807b 68px,#7CD1B8 68px,#afd7d6 100%)
+}
+
+#output {
+  width: 200px;
+  height: 44px;
+  font: bold 30px/44px monospace;
+  border: solid 1px #3E8E7E;
+  border-radius: 2px;
+  margin-bottom: 28px;
+  text-align: right;
+  padding: 0 0 0 2px;
+  box-sizing: border-box;
+  background: #FABB51;
+  border-radius: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  box-shadow: inset 1px 1px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+#keypad {
+  width: 200px;
+  height: 240px;
+  display: grid;
+  grid-template-columns: repeat(4, 40px);
+  grid-template-rows: [row1] [row2] [row3] [row4] [row5];
+  justify-content: space-between;
+}
+
+button {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  outline: 0;
+  background: #FAEDC6;
+}
+
+button:active {
+  background: #3E8E7E;
+}
+
+.clear {
+  grid-column: 1 / span 4;
+  grid-row: 1 / span 1;
+  background: #FABB51;
+}
