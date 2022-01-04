@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
     <title>Calculatrice</title>
 </head>
 <body>
@@ -15,29 +14,42 @@
 
 
     <!--CALCULATOR-->
-    <div id="calculator">
-  <p id="output"></p>
-<div id="keypad">
-<button class="clear">C</button>  
-<button class="number">1</button>
-<button class="number">2</button>
-<button class="number">3</button>
-<button>/</button>
-  
-<button class="number">4</button>
-<button class="number">5</button> 
-<button class="number">6</button>
-<button>*</button>
+    <div class="display">  
+    <p id="output">0</p>
+     </div>
+<div class="buttons-section">
+<div class="first-row">
+   <button id="r1-1">C</button>
+   <button class="button">⬅</button>
+   <button id="r1-4">÷</button>
+</div>
 
-<button class="number">7</button>
-<button class="number">8</button>
-<button class="number">9</button>
-<button>-</button>
+<div class="second-row">
+   <button id="r2-1" class="numBtn" value="7">7</button>
+   <button id="r2-2" class="numBtn" value="8">8</button>
+   <button id="r2-3" class="numBtn" value="9">9</button>
+   <button id="r2-4" >X</button>
+</div>
 
-<button class="number">0</button> <button class="number">.</button>
-<button>=</button>
-<button>+</button>
-</div>  
+<div class="third-row">
+   <button id="r3-1" class="numBtn">4</button>
+   <button id="r3-2" class="numBtn">5</button>
+   <button id="r3-3" class="numBtn">6</button>
+   <button id="r3-4" >-</button>
+</div>
+
+<div class="fourth-row">
+   <button id="r4-1"  class="numBtn">1</button>
+   <button id="r4-2"  class="numBtn">2</button>
+   <button id="r4-3"  class="numBtn">3</button>
+   <button id="r4-4"  >+</button>
+</div>
+
+<div class="fifth-row">
+  <button id="r5-1" class="numBtn">0</button>
+  <button id="r5-2" >.</button>
+  <button id="r5-3" >=</button>
+</div>
 </div>
 
     <script src="script.js"></script>

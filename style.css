@@ -1,61 +1,43 @@
-body {
-  text-align: center;
-  display: flex;
-  align-content: center;
-  margin-top: 24px;
-  flex-flow: column wrap;
-}
-#calculator {
-  padding: 12px 10px 6px;
-  border: solid 1px #93B5C6;
-  border-radius: 8px 8px 4px 4px;
-  background: linear-gradient(to bottom,#93B5C6 0%,#C9CCD5 68px,#E4D8DC 68px,#FFE3E3 100%);
-}
-#output {
-  width: 200px;
-  height: 44px;
-  font: bold 30px/44px monospace;
-  border: solid 1px #004643;
-  border-radius: 2px;
-  margin-bottom: 28px;
-  text-align: right;
-  padding: 0 0 0 2px;
-  box-sizing: border-box;
-  background: #FFE3E3;
-  border-radius: 2px;
-  white-space: nowrap;
-  overflow: hidden;
-  box-shadow: inset 1px 1px 2px 2px rgba(0, 0, 0, 0.15);
+html{
+    background: #93FFD8;
+    text-align: center;
 }
 
-#keypad {
-  width: 200px;
-  height: 240px;
-  display: grid;
-  grid-template-columns: repeat(4, 40px);
-  grid-template-rows: [row1] [row2] [row3] [row4] [row5];
-  justify-content: space-between;
+h1{
+    color: #7900FF;
+    text-align: center;
 }
 
 button {
-  height: 40px;
-  width: 40px;
-  text-align: center;
-  font-size: 28px;
-  font-weight: bold;
+  padding: 10px;
+  width: 67px;
+  height: 45px;
+  margin-top: 10px;
+  background-color: #548CFF;
+  color: black;
+  font-size: 20px;
+  border: 1px solid #7900FF;
+}
+
+button:hover {
   cursor: pointer;
-  border-radius: 4px;
-  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
-  outline: 0;
-  background: #93B5C6;
+  background-color: #7900FF;
 }
-
 button:active {
-  background: #C9CCD5;
+  background-color: #548CFF;
 }
 
-.clear {
-  grid-column: 1 / span 4;
-  grid-row: 1 / span 1;
-  background: #FFE3E3;
+.display {
+      background-color: #CFFFDC;
+      padding: 15px;
+      width: 250px;
+      text-align: right;
+      font-size: 30px;
+      border-top-left-radius:10px;
+      border-top-right-radius:10px;
+      margin: auto;
+}
+
+#r1-1, #r5-1{
+    width: 138px;
 }

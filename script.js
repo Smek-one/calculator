@@ -1,88 +1,90 @@
-(function myCalculator() {
-  //Keys
-  const keys = document.getElementsByTagName("button");
-  //For clicks
-  for (const key of keys) {
-    key.onclick = handleClick;
+let display = document.querySelector("#output");
+let numberShow = "";
+let operator = "";
+
+let previousNumber;
+
+function handleInput(value) {
+  if (isNaN(value)) {
+    handleSymbol(value);
+  } else {
+    handleNumber(value);
   }
+}
 
-  //For display
-  const output = document.getElementById("output");
-  //Number input before operator
-  let numOut = "",
-    //Number input after operator
-    numOutNew = "",
-    //Operator
-    op = "",
-    //Result
-    int = 0;
-
-  //Click function
-  function handleClick() {
-    let num = this.innerText;
-    if (this.classList.contains("number")) {
-      numOut += num;
-      output.innerText = numOut;
-    } else {
-      doCalc(num);
+function answer() {
+  if (operator === null) {
+    return;
+  } else {
+    switch (operator) {
+      case "+":
+        display.innerText = parseInt(previousNumber) + parseInt(numberShow);
+        break;
+      case "-":
+        display.innerText = parseInt(previousNumber) - parseInt(numberShow);
+        break;
+      case "X":
+        display.innerText = parseInt(previousNumber) * parseInt(numberShow);
+        break;
+      case "÷":
+        display.innerText = parseInt(previousNumber) / parseInt(numberShow);
+        break;
+      default:
+        break;
     }
+    numberShow = display.innerText;
+    operator = null;
   }
+}
 
-  function doClear() {
-    output.innerText = "";
-    numOut = "";
-    numOutNew = "";
-    op = "";
-    int = 0;
-  }
-
-  //Calculation
-  function doCalc(calc) {
-    if (calc === "C") {
-      //Clear
-      doClear();
-    } else if (numOutNew !== "") {
-      //Transform string intp integer
-      numOut = parseFloat(numOut);
-      switch (op) {
-        //Divide
-        case "/":
-          if (numOut !== 0) {
-            int = numOutNew / numOut;
-          } else {
-            int = "error";
-          }
-          break;
-        //Multiply
-        case "*":
-          int = numOutNew * numOut;
-          break;
-        //Subtract
-        case "-":
-          int = numOutNew - numOut;
-          break;
-        //Add
-        case "+":
-          int = numOutNew + numOut;
-          break;
-        //Equal
-        case "=":
-          int = parseFloat(output.innerText);
-          break;
-      }
-      if (isNaN(int)) {
-        output.innerText = "error";
-        setTimeout(function () {
-          doClear();
-        }, 2000);
+function handleSymbol(value) {
+  console.log("Symbol");
+  switch (value) {
+    case "÷":
+    case "X":
+    case "-":
+    case "+":
+      operator = value;
+      previousNumber = numberShow;
+      numberShow = "";
+      display.innerText = operator;
+      break;
+    case "C":
+      numberShow = 0;
+      rerender();
+      break;
+    case "⬅":
+      if (display.innerText.length < 2) {
+        numberShow = 0;
       } else {
-        output.innerText = int;
-        numOutNew = int;
+        numberShow = numberShow.slice(0, -1);
       }
-    } else if (numOut !== "") {
-      numOutNew = parseFloat(numOut);
-    }
-    op = calc;
-    numOut = "";
+      rerender();
+      break;
+    case "=":
+      answer();
   }
-})();
+}
+
+function handleNumber(value) {
+  if (numberShow === 0) {
+    numberShow = value;
+  } else {
+    numberShow = numberShow + value.toString();
+  }
+  rerender();
+}
+
+function rerender() {
+  display.innerText = numberShow;
+}
+
+function init() {
+  document
+    .querySelector(".buttons-section")
+    .addEventListener("click", function (e) {
+      handleInput(e.target.innerText);
+    });
+}
+
+init();
