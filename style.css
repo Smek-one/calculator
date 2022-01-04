@@ -38,6 +38,9 @@ button:active {
       margin: auto;
 }
 
-#r1-1, #r5-1{
+#r5-1{
     width: 138px;
+}
+#r1-1{
+  width: 210px;
 }
